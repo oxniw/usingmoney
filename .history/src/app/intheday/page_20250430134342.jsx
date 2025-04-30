@@ -59,7 +59,7 @@ function Page() {
           return true;
         }
       }
-      const getdata = async () => {
+      const getdata = async (year,mounth,day) => {
         const res = await axios.post("https://backen-swart.vercel.app/api/getdata", {
           username: localStorage.getItem("username"),
           password: localStorage.getItem("password"),

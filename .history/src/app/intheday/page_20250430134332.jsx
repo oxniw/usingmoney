@@ -59,7 +59,7 @@ function Page() {
           return true;
         }
       }
-      const getdata = async () => {
+      const getdata = async (year,mounth,day) => {
         const res = await axios.post("https://backen-swart.vercel.app/api/getdata", {
           username: localStorage.getItem("username"),
           password: localStorage.getItem("password"),
@@ -152,8 +152,8 @@ function Page() {
         </button>
         <div className="w-full max-w-96 bg-slate-600 rounded-xl flex justify-center items-center">
         <span>{day}/</span>
-        <span>{month}/</span>
-        <span>{year}</span>
+        <span>{localStorage.getItem("mounth")}/</span>
+        <span>{localStorage.getItem("years")}</span>
         </div>
       </div>
       <div className="w-full bg-black h-full max-h-40 relative justify-center items-center flex">
