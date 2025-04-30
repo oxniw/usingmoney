@@ -29,7 +29,7 @@ function Page() {
   const inthemounth =() => {
     router.push("/datemon");
   }
-  const note = () => {
+  const dashboard = () => {
     router.push("/note");
   }
   useEffect(() => {
@@ -83,7 +83,7 @@ function Page() {
 
         </div>
         <div className="w-full max-w-96 h-full max-h-52 rounded-2xl bg-slate-950 text-white gap-4 p-4 relative grid transition-transform duration-300 hover:scale-110"
-        onClick={note}>
+        onClick={dashboard}>
           <p className="justify-center items-center flex">โน๊ตของฉัน</p>
           <div className="w-full max-w-96 h-full max-h-24 rounded-2xl bg-white-100 text-white flex gap-4 p-2 bottom-0"style={{ backgroundImage: "url('/72eececbd6184e81f4bca6c57213e0d8.jpg')" }}></div>
 

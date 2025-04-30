@@ -18,7 +18,7 @@ function Page() {
     return res;
   };
   const getmounth = async () => {
-    const res = await axios.post("https://backen-swart.vercel.app/api/pullmounth", {
+    const res = await axios.post("https://backen-swart.vercel.app/pullmounth", {
         username: localStorage.getItem("username"),
         password: localStorage.getItem("password"),
         year: year,

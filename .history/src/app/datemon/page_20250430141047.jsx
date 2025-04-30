@@ -18,7 +18,7 @@ function Page() {
     return res;
   };
   const getmounth = async () => {
-    const res = await axios.post("https://backen-swart.vercel.app/api/pullmounth", {
+    const res = await axios.post("https://backen-swart.vercel.app/pullmounth", {
         username: localStorage.getItem("username"),
         password: localStorage.getItem("password"),
         year: year,
@@ -54,14 +54,14 @@ function Page() {
       }
     
   }, []);
-    useEffect(() => {
-      getmounth().then((data) => {
-        console.log(data.data.d);
-        setday(data.data.d);
-      }).catch((error) => {
-        console.error(error);
-      })
-    }, [date, year]);
+    //useEffect(() => {
+    //  getmounth().then((data) => {
+    //    console.log(data.data.d);
+    //    setday(data.data.d);
+    //  }).catch((error) => {
+    //    console.error(error);
+    //  })
+    //}, [date, year]);
   return (
     <div className="relative h-screen text-white">
       <div className="w-full relative top-0 left-0 p-4 bg-gray-500 text-white flex items-center space-x-4">

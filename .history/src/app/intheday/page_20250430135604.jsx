@@ -98,7 +98,7 @@ function Page() {
                 name: name,
                 year: localStorage.getItem("years"),
                 mounth: localStorage.getItem("mounth"),
-                day: localStorage.getItem("day"),
+                day: day,
                 description: description
               });
               

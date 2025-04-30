@@ -11,14 +11,14 @@ function Page() {
   const [year, setyear] = useState(1);
   const [day,setday] = useState([]);
   const de = async () => {
-    const res = await axios.post("https://backen-swart.vercel.app/api/pulldata", {
+    const res = await axios.post("https://backen-swart.vercel.app/pulldata", {
       username: localStorage.getItem("username"),
       password: localStorage.getItem("password"),
     });
     return res;
   };
   const getmounth = async () => {
-    const res = await axios.post("https://backen-swart.vercel.app/api/pullmounth", {
+    const res = await axios.post("https://backen-swart.vercel.app/pullmounth", {
         username: localStorage.getItem("username"),
         password: localStorage.getItem("password"),
         year: year,
@@ -42,26 +42,26 @@ function Page() {
   }
 
   useEffect(() => {;
-      if (check()) {
-          de().then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      } else {
-        router.push("/");
-      }
+    if (check()) {
+        de().then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      router.push("/");
+    }
     
   }, []);
-    useEffect(() => {
-      getmounth().then((data) => {
-        console.log(data.data.d);
-        setday(data.data.d);
-      }).catch((error) => {
-        console.error(error);
-      })
-    }, [date, year]);
+    //useEffect(() => {
+    //  getmounth().then((data) => {
+    //    console.log(data.data.d);
+    //    setday(data.data.d);
+    //  }).catch((error) => {
+    //    console.error(error);
+    //  })
+    //}, [date, year]);
   return (
     <div className="relative h-screen text-white">
       <div className="w-full relative top-0 left-0 p-4 bg-gray-500 text-white flex items-center space-x-4">
