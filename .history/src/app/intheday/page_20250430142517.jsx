@@ -161,7 +161,7 @@ function Page() {
         Stat about ur money
         </h1>
       </div>
-      <div className="w-full bg-white-200 h-full relative gap-5 p-5 overflow-auto">
+      <div className="w-full bg-white-200 h-full relative gap-5 p-5">
         <div className=" justify-center items-center flex w-full text-4xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               Barchart and pie charts
           </div>

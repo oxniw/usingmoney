@@ -41,7 +41,7 @@ function Background() {
     if(localStorage.getItem("username") !== null && localStorage.getItem("password") !== null){
       router.push("/about");
     } else {
-      alert("1. หลังจาก Sign Up ให้ Log Out แล้ว Log In ใหม่อีกครั้ง เพื่อความเสถียร\n2. Website จะช้าหน่อยเพราะใช้ Hosting ฟรี\n3.ให้กด update หรือ refresh ทุกครั้งเพื่อ update เเละโหลด data ที่เคยมี");
+      alert("1. หลังจาก Sign Up ให้ Log Out แล้ว Log In ใหม่อีกครั้ง เพื่อความเสถียร\n2. Website จะช้าหน่อยเพราะใช้ Hosting ฟรี\nให้กด update หรือ refresh ทุกครั้งเพื่อ update เเละโหลด data ที่เคยมี");
 
     }
   }, []);
