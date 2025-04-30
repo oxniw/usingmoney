@@ -6,13 +6,13 @@ import PieChartCanvas from '../components/piechart';
 import BarChart from "../components/barchart"
 function Page() {
     const router = useRouter();
+    const day = localStorage.getItem("day")
     const [storedUsername, setStoredUsername] = useState("");
     const [totalincome,settotalincome] = useState(0);
     const [totalexpense,settotalexpense] = useState(0);
     const [datas,setdata] = useState([]);
-    const [yearss,setyearss] = useState(0)
-    const [mounth,setmounth] = useState(0)
-    const [day,setday] = useState(0)
+    const yearss = localStorage.getItem("years")
+    const mounth  = localStorage.getItem("mounth")
     const [data, setData] = useState([]);
     const [labels, setLabels] = useState([]);
     const [percent, setpercent] = useState([])
@@ -55,9 +55,7 @@ function Page() {
       useEffect(() => {
         if (check()) {
           console.log("check")
-          setyearss(localStorage.getItem("years"))
-          setmounth(localStorage.getItem("mounth"))
-          setday(localStorage.getItem("day"))
+          console.log(yearss,mounth)
         } else {
             router.push("/");
         }

@@ -55,6 +55,7 @@ function Page() {
       useEffect(() => {
         if (check()) {
           console.log("check")
+          console.log(yearss,mounth)
           setyearss(localStorage.getItem("years"))
           setmounth(localStorage.getItem("mounth"))
           setday(localStorage.getItem("day"))
