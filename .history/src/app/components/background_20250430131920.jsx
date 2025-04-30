@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { WavyBackground } from "../../../components/ui/wavy-background";
 import './animations.css'; // Import the animations CSS file
 import axios from 'axios';
 function Background() {
@@ -45,10 +46,13 @@ function Background() {
 
   return (
     
-    <div className="relative h-screen overflow-y-scroll overflow-hidden">
-      <div className="grid relative max-w-7xl max-h-7xl-lg rounded-2xl">
-          <div className="relative mt-8 w-full max-w-2xl bg-gradient-to-r text-white p-12 rounded-3xl-lg fade-in top-10">
-            <h1 className="text-white text-4xl md:text-6xl font-bold fade-in">Log in</h1>
+    <div className="relative h-screen">
+      <div className="absolute">
+      
+        <div className="grid relative max-w-7xl max-h-7xl-lg rounded-2xl">
+          
+          <div className="relative w-full max-w-2xl bg-gradient-to-r text-white p-12 rounded-3xl-lg fade-in top-10">
+            <h1 className="text-white text-4xl md:text-6xl font-bold fade-in">login</h1>
             <div className="relative w-full max-w-2xl bg-gradient-to-r text-white p-12 rounded-3xl-lg fade-in">
               <p className="relative z-10">username</p>
               <input
@@ -67,23 +71,22 @@ function Background() {
                 placeholder="Password"
               />
             </div>
+            
             <button
               onClick={goToAbout}
               className="relative z-10 w-full max-w-3xl py-3 rounded-3xl text-white bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              Log in
+              log in
             </button>
             <button 
             onClick={goTosignin}
-            className="relative z-10 w-full p-8 max-w-3xl py-3 rounded-3xl text-white bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign up</button>
-            
+            className="relative z-10 w-full p-8 max-w-3xl py-3 rounded-3xl text-white bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">sign up</button>
           </div>
-          
-          
-        </div>
-        <div className="fixed bottom-0 w-full px-4 py-3 text-white bg-black-200 shadow-sm">
-          {error && <p>{error}</p>}
         </div>
         
+      </div>
+      <div className="fixed bottom-0 w-full px-4 py-3 text-white bg-black-200 shadow-sm">
+          {error && <p>{error}</p>}
+        </div>
     </div>
     
   );
