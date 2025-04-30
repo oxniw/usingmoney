@@ -115,7 +115,6 @@ function Page() {
             }
           } catch (e) {
             setreport(["Error updating data. Please try again."]);
-            console.log(e);
           }
         } else {
           setreport(["Fields cannot be empty"]);

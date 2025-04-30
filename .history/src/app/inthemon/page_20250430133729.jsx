@@ -6,7 +6,7 @@ import PieChartCanvas from '../components/piechart';
 import BarChart from "../components/barchart"
 function Page() {
     const router = useRouter();
-    
+    const [storedPassword, setStoredPassword] = useState("");
     const [storedUsername, setStoredUsername] = useState("");
     const [totalincome,settotalincome] = useState(0);
     const [totalexpense,settotalexpense] = useState(0);
@@ -24,7 +24,7 @@ function Page() {
           router.push("/");
           return false;
         } else {
-          
+          setStoredPassword(localStorage.getItem("password"));
           setStoredUsername(localStorage.getItem("username"));
           return true;
         }
@@ -54,7 +54,6 @@ function Page() {
       useEffect(() => {
         if (check()) {
           console.log("check")
-          console.log(yearss,mounth)
         } else {
             router.push("/");
         }

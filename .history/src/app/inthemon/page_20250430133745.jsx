@@ -54,7 +54,6 @@ function Page() {
       useEffect(() => {
         if (check()) {
           console.log("check")
-          console.log(yearss,mounth)
         } else {
             router.push("/");
         }
