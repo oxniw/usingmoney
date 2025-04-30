@@ -1,14 +1,22 @@
 "use client";
-import {useEffect,useState} from 'react'
+import React,{useEffect,useState} from 'react'
 import { useRouter } from "next/navigation";
 import axios from "axios";
 function page() {
     const router = useRouter();
+    const [storedPassword, setStoredPassword] = useState("");
     const [storedUsername, setStoredUsername] = useState("");
+    const [totalincome,settotalincome] = useState(0);
+    const [totalexpense,settotalexpense] = useState(0);
     const [totalexpenseinyear, settotalexpenseinyear] = useState(0);
     const [totalincomeinyear, settotalincomeinyear] = useState(0);
-    
-    
+    const [datas,setdata] = useState([]);
+    const [yearss ,setyears] = useState(localStorage.getItem("years"));
+    const [mounth ,setmounth] = useState(localStorage.getItem("mounth"));
+    const [data, setData] = useState([]);
+    const [labels, setLabels] = useState([]);
+    const [percent, setpercent] = useState([])
+    const [clicked, setClicked] = useState(false);
     const [prices, setprice] = useState(0)
     const [goalname, setgoalname] = useState("")
     const [report , setreport] = useState([]);
@@ -42,8 +50,11 @@ function page() {
       }
     };
     const handleClick = () => {
-
+        setClicked(true);
         getdata()
+        setTimeout(() => {
+          setClicked(false);
+        }, 100);
       };
     const logout = () => {
         router.push("/about");
@@ -53,7 +64,7 @@ function page() {
           router.push("/");
           return false;
         } else {
-          
+          setStoredPassword(localStorage.getItem("password"));
           setStoredUsername(localStorage.getItem("username"));
           return true;
         }
@@ -66,12 +77,12 @@ function page() {
           mounth: localStorage.getItem("mounth"),
           day: localStorage.getItem("day")
         })
-        
-        
-        
-        
-        
-
+        setdata(res.data.data.datastore)
+        settotalincome(res.data.data.totalincome)
+        settotalexpense(res.data.data.totalexpense)
+        setData(res.data.data.expense)
+        setLabels(res.data.data.name)
+        setpercent(res.data.data.percent) 
         setpriceandgoalname(res.data.data.goal.goal)
         //console.log(res.data.data.goal.goal)
         settotalbalance(res.data.data.totalbalance)

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import PieChartCanvas from '../components/piechart';
 import BarChart from "../components/barchart"
-function Page() {
+function page() {
     const router = useRouter();
     
     const [storedUsername, setStoredUsername] = useState("");
@@ -318,4 +318,4 @@ function Page() {
   )
 }
 
-export default Page
+export default page

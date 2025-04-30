@@ -34,6 +34,7 @@ function Page() {
     if (localStorage.getItem("username") === null && localStorage.getItem("password") === null) {
       router.push("/");
     } else {
+        setstoredPassword(localStorage.getItem("password"));
         setstoredUsername(localStorage.getItem("username"));
         de().then((data) => {
           console.log(data);

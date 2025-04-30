@@ -7,7 +7,7 @@ function Page() {
   const router = useRouter();
   
   const [storedUsername, setStoredUsername] = useState("");
-  const date = 1
+  const [date, setDate] = useState(1);
   const [year, setyear] = useState(1);
   const [day,setday] = useState([]);
   const de = async () => {
